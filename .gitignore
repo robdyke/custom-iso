@@ -1,4 +1,4 @@
-/disk*
+disk.*
 *.iso
 
 output

@@ -4,7 +4,12 @@ set -e
 
 rm -f disk.*
 
-hdiutil create -size 2g -fs FAT32 -volname LINUX -o ./disk
+if [ -n "$1" ]; then
+    hdiutil create -srcfolder "$1" -fs FAT32 -volname LINUX -o ./disk
+else
+    hdiutil create -size 2g -fs FAT32 -volname LINUX -o ./disk
+fi
+
 VBoxManage convertfromraw disk.dmg disk.vdi --variant Fixed
 rm disk.dmg
 ln -s disk.vdi disk.img
