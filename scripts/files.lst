@@ -1,0 +1,5 @@
+EFI/BOOT/BOOTx64.EFI
+EFI/BOOT/grubx64.efi
+casper/initrd.lz
+casper/vmlinuz.efi
+casper/filesystem.squashfs

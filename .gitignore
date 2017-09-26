@@ -1,2 +1,5 @@
 /disk*
 *.iso
+
+output
+extracted
