@@ -1,3 +1,5 @@
 cache
 logs
 builds
+
+.DS_Store

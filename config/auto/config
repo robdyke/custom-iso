@@ -2,12 +2,16 @@
 set -eu
 
 lb config noauto \
+  --architecture amd64 \
   --apt-indices false \
   --apt-recommends false \
   --apt-source-archives false \
+  --archive-areas "main contrib non-free" \
   --binary-images iso-hybrid \
+  --bootappend-live "boot=live config quiet splash"
   --checksums none \
   --debian-installer false \
+	--linux-flavours amd64 \
   --memtest none \
   --parent-mirror-bootstrap $DEBIAN_MIRROR/debian \
   --mirror-bootstrap $DEBIAN_MIRROR/debian \
