@@ -6,12 +6,11 @@ lb config noauto \
   --apt-recommends false \
   --apt-source-archives false \
   --binary-images iso-hybrid \
-  --bootloader grub2 \
   --checksums none \
   --debian-installer false \
   --memtest none \
-  --parent-mirror-bootstrap $DEBIAN_MIRROR \
-  --mirror-bootstrap $DEBIAN_MIRROR \
+  --parent-mirror-bootstrap $DEBIAN_MIRROR/debian \
+  --mirror-bootstrap $DEBIAN_MIRROR/debian \
   --source false \
   --system live \
   --win32-loader false \

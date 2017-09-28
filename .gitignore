@@ -1,9 +1,3 @@
-disk.*
-*.iso
-
-output
-extracted
-.cache
-tmp
-/logs
-/builds
+cache
+logs
+builds

@@ -4,7 +4,7 @@ services:
   cache:
     build: ./approx
     volumes:
-      - ./approx/.cache:/var/cache/approx:delegated
+      - ./approx/cache:/var/cache/approx:delegated
 
   builder:
     build: .
@@ -14,6 +14,5 @@ services:
     volumes:
       - ./builds:/tmp/builds:delegated
       - ./logs:/tmp/logs:delegated
-      # - ./config:/opt/live
     links:
       - cache
