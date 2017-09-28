@@ -1,8 +1,6 @@
 #!/bin/bash
 set -eu
 
-echo "$DEBIAN_MIRROR"
-
 lb config noauto \
   --apt-indices false \
   --apt-recommends false \
@@ -14,8 +12,7 @@ lb config noauto \
   --memtest none \
   --parent-mirror-bootstrap $DEBIAN_MIRROR \
   --mirror-bootstrap $DEBIAN_MIRROR \
-  --quiet \
   --source false \
   --system live \
   --win32-loader false \
-  "$@"
+  "$@" 2>&1 | tee /tmp/logs/build.log

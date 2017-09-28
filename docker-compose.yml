@@ -13,5 +13,7 @@ services:
     privileged: true
     volumes:
       - ./builds:/tmp/builds:delegated
+      - ./logs:/tmp/logs:delegated
+      # - ./config:/opt/live
     links:
       - cache

@@ -4,7 +4,9 @@ RUN apt-get -yqq update && apt-get -yqq install \
   live-build \
   && rm -rf /var/lib/apt/lists/*
 
-COPY config /tmp/builder
+ADD config /opt/live
+WORKDIR /opt/live
 
-WORKDIR /tmp/builder
+RUN chmod -R +x auto/
+
 CMD ["sh", "./build.sh"]
