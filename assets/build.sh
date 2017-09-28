@@ -1,10 +1,9 @@
-echo $DEBIAN_MIRROR
+#!/bin/bash
+set -eu
 
-echo "Acquire::http { Proxy \"$DEBIAN_MIRROR\"; };" | tee /etc/apt/apt.conf.d/02proxy
+# export http_proxy=$DEBIAN_MIRROR
 
-lb config --apt-http-proxy=$DEBIAN_MIRROR
+lb config # --apt-http-proxy=$DEBIAN_MIRROR
 lb build
-
-ls
 
 mv *.iso /tmp/builds/

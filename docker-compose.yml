@@ -10,11 +10,10 @@ services:
     build: ./docker/builder
     environment:
       - DEBIAN_MIRROR=http://cache:9999
-    command: sudo sh /var/assets/build.sh
+    command: sh /var/assets/build.sh
     privileged: true
     volumes:
       - ./assets:/var/assets
-      - ./logs:/tmp/logs
       - ./builds:/tmp/builds
     links:
       - cache
