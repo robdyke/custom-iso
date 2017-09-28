@@ -2,18 +2,16 @@ version: '2'
 
 services:
   cache:
-    build: ./docker/approx
+    build: ./approx
     volumes:
-      - ./docker/approx/.cache:/var/cache/approx
+      - ./approx/.cache:/var/cache/approx:delegated
 
   builder:
-    build: ./docker/builder
+    build: .
     environment:
       - DEBIAN_MIRROR=http://cache:9999
-    command: sh /var/assets/build.sh
     privileged: true
     volumes:
-      - ./assets:/var/assets
-      - ./builds:/tmp/builds
+      - ./builds:/tmp/builds:delegated
     links:
       - cache

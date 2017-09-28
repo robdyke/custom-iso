@@ -1,0 +1,6 @@
+#!/bin/bash
+set -eu
+
+lb clean noauto \
+  --purge \
+  "$@"

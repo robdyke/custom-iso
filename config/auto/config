@@ -1,0 +1,21 @@
+#!/bin/bash
+set -eu
+
+echo "$DEBIAN_MIRROR"
+
+lb config noauto \
+  --apt-indices false \
+  --apt-recommends false \
+  --apt-source-archives false \
+  --binary-images iso-hybrid \
+  --bootloader grub2 \
+  --checksums none \
+  --debian-installer false \
+  --memtest none \
+  --parent-mirror-bootstrap $DEBIAN_MIRROR \
+  --mirror-bootstrap $DEBIAN_MIRROR \
+  --quiet \
+  --source false \
+  --system live \
+  --win32-loader false \
+  "$@"
