@@ -1,10 +1,11 @@
-FROM debian:stretch-slim
+FROM ubuntu:xenial
 
 RUN apt-get -yqq update && apt-get -yqq install \
   isolinux \
   live-build \
   syslinux \
   syslinux-common \
+  time \
   xorriso \
   && rm -rf /var/lib/apt/lists/*
 

@@ -9,7 +9,7 @@ services:
   builder:
     build: .
     environment:
-      - DEBIAN_MIRROR=http://cache:9999
+      - APT_PROXY=http://cache:9999
     privileged: true
     volumes:
       - ./builds:/tmp/builds:delegated

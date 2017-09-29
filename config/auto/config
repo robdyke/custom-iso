@@ -6,16 +6,14 @@ lb config noauto \
   --apt-indices false \
   --apt-recommends false \
   --apt-source-archives false \
-  --archive-areas "main contrib non-free" \
   --binary-images iso-hybrid \
-  --bootappend-live "boot=live config quiet splash"
-  --checksums none \
   --debian-installer false \
+  --distribution "xenial" \
 	--linux-flavours amd64 \
   --memtest none \
-  --parent-mirror-bootstrap $DEBIAN_MIRROR/debian \
-  --mirror-bootstrap $DEBIAN_MIRROR/debian \
+  --mode ubuntu \
   --source false \
   --system live \
   --win32-loader false \
+  --zsync false \
   "$@" 2>&1 | tee /tmp/logs/build.log
