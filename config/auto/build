@@ -1,6 +1,0 @@
-#!/bin/bash
-set -eu
-
-lb build noauto \
-  --quiet \
-  "$@" 2>&1 | tee /tmp/logs/build.log

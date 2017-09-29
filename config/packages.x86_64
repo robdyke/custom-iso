@@ -1,0 +1,19 @@
+# Display Server
+xorg-server
+xorg-apps
+xorg-xinit
+xorg-twm
+xterm
+
+# Video Drivers
+xf86-video-ati
+xf86-video-nouveau
+xf86-video-intel
+
+# VirtualBox
+virtualbox-guest-utils
+
+# Gnome
+gnome
+gdm
+gnome-extra

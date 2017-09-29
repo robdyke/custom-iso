@@ -1,6 +1,7 @@
 FROM base/archlinux
 
 RUN pacman -Syu --noconfirm \
+    arch-install-scripts \
     dosfstools \
     git \
     lynx \
@@ -18,6 +19,8 @@ RUN git clone git://projects.archlinux.org/archiso.git && \
     mkdir /var/livecd && \
     cp -r /usr/share/archiso/configs/releng/* /var/livecd && \
     chmod +x /var/livecd/build.sh
+
+COPY config /var/livecd
 
 WORKDIR /var/livecd
 
