@@ -1,7 +1,6 @@
 FROM base/archlinux
 
 RUN pacman -Syu --noconfirm \
-    arch-install-scripts \
     dosfstools \
     git \
     lynx \
@@ -11,7 +10,7 @@ RUN pacman -Syu --noconfirm \
     xorriso \
     && pacman -Scc
 
-RUN git clone git://projects.archlinux.org/archiso.git && \
+RUN git clone https://github.com/atkinchris/archiso.git && \
     cd archiso && \
     make install && \
     cd .. && \
