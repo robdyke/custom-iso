@@ -1,2 +1,2 @@
 build:
-	sh ./bootstrap.sh
+	sh ./run.sh

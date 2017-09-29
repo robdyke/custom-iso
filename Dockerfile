@@ -1,18 +1,27 @@
-FROM ubuntu:xenial
+FROM base/archlinux
 
-RUN apt-get -yqq update && apt-get -yqq install \
-  isolinux \
-  live-build \
-  syslinux \
-  syslinux-common \
-  time \
-  xorriso \
-  && rm -rf /var/lib/apt/lists/*
+RUN pacman -Syu --noconfirm \
+    dosfstools \
+    git \
+    lynx \
+    make \
+    squashfs-tools \
+    time \
+    xorriso \
+    && pacman -Scc
 
-ADD config /opt/live
-WORKDIR /opt/live
+RUN git clone git://projects.archlinux.org/archiso.git && \
+    cd archiso && \
+    make install && \
+    cd .. && \
+    rm -rf archiso && \
+    mkdir /var/livecd && \
+    cp -r /usr/share/archiso/configs/releng/* /var/livecd && \
+    chmod +x /var/livecd/build.sh
 
-RUN chmod -R +x auto/
-VOLUME ["/opt/live"]
+WORKDIR /var/livecd
 
-CMD ["sh", "./build.sh"]
+VOLUME ["/var/cache/pacman/", "/tmp/out"]
+
+ENTRYPOINT ["time", "./build.sh", "-o", "/tmp/out"]
+# CMD ["-v"]

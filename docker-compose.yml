@@ -1,18 +1,9 @@
 version: '2'
 
 services:
-  cache:
-    build: ./approx
-    volumes:
-      - ./approx/cache:/var/cache/approx:delegated
-
   builder:
     build: .
-    environment:
-      - APT_PROXY=http://cache:9999
     privileged: true
     volumes:
-      - ./builds:/tmp/builds:delegated
-      - ./logs:/tmp/logs:delegated
-    links:
-      - cache
+      - ./cache:/var/cache/pacman:delegated
+      - ./builds:/tmp/out:delegated
