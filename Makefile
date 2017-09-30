@@ -9,3 +9,6 @@ docker-build:
 
 docker-push:
 	docker push atkinchris/archiso:latest
+
+docker-run:
+	docker run --privileged atkinchris/custom-iso:latest

@@ -32,7 +32,7 @@ resource "aws_iam_role" "build_agent_role" {
   assume_role_policy = "${data.aws_iam_policy_document.instance-assume-role-policy.json}"
 }
 
-resource "aws_iam_instance_profile" "build-agent-profile" {
+resource "aws_iam_instance_profile" "build_agent_profile" {
   name = "build-agent-profile"
   role = "${aws_iam_role.build_agent_role.name}"
 }

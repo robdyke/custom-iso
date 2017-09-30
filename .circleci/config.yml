@@ -1,8 +1,0 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: atkinchris/custom-iso:latest
-    steps:
-      - run: pwd
-      - run: whoami

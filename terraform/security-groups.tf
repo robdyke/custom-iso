@@ -1,4 +1,4 @@
-resource "aws_security_group" "build-agent-security-group" {
+resource "aws_security_group" "build_agent_security_group" {
   name = "build-agent-security-group"
 
   ingress {
