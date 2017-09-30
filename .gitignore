@@ -1,5 +1,7 @@
 cache
 logs
 builds
+.terraform
 
+terraform.tfstate.backup
 .DS_Store
