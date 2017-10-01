@@ -5,10 +5,10 @@ rebuild:
 	docker-compose build --no-cache
 
 docker-build:
-	docker build -t atkinchris/archiso:latest .
+	docker build -t atkinchris/custom-iso:latest .
 
 docker-push:
-	docker push atkinchris/archiso:latest
+	docker push atkinchris/custom-iso:latest
 
 docker-run:
-	docker run --privileged atkinchris/custom-iso:latest
+	docker run --name builder --privileged atkinchris/custom-iso:latest
