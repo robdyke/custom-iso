@@ -3,9 +3,9 @@ data "template_file" "user_data" {
 }
 
 resource "aws_launch_configuration" "build_agent_configuration" {
-  image_id      = "ami-ebd02392"
-  instance_type = "c3.2xlarge"
-  spot_price    = "0.15"
+  image_id      = "ami-785db401"
+  instance_type = "c4.xlarge"
+  spot_price    = "0.07"
 
   iam_instance_profile = "${aws_iam_instance_profile.build_agent_profile.arn}"
   key_name             = "compute-instance-20170930"
