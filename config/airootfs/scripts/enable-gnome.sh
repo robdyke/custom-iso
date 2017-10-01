@@ -1,2 +1,2 @@
-sudo systemctl enable gdm.service
+systemctl enable gdm.service
 echo "HELLO WORLD" > /root/message.txt
