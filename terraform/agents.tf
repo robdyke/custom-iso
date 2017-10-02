@@ -2,13 +2,18 @@ data "template_file" "user_data" {
   template = "${file("user_data.sh")}"
 }
 
+resource "aws_key_pair" "access_key" {
+  key_name   = "agent-access-key"
+  public_key = "${file("access_key.pub")}"
+}
+
 resource "aws_launch_configuration" "build_agent_configuration" {
   image_id      = "ami-785db401"
   instance_type = "c4.2xlarge"
   spot_price    = "0.15"
 
   iam_instance_profile = "${aws_iam_instance_profile.build_agent_profile.arn}"
-  key_name             = "Macbook (Work)"
+  key_name             = "${aws_key_pair.access_key.key_name}"
   user_data            = "${data.template_file.user_data.rendered}"
 
   security_groups = [
