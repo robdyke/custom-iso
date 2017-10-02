@@ -11,6 +11,7 @@ xf86-video-nouveau
 xf86-video-intel
 
 # VirtualBox
+virtualbox-guest-utils
 virtualbox-guest-modules-arch
 
 # Gnome
@@ -18,3 +19,4 @@ lightdm
 lightdm-gtk-greeter
 gnome
 gnome-extra
+plank
