@@ -1,5 +1,5 @@
 build:
-	sh ./run.sh
+	./run.sh
 
 rebuild:
 	docker-compose build --no-cache
