@@ -14,7 +14,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_scale_down" {
   namespace           = "AWS/EC2"
   period              = "60"
   statistic           = "Average"
-  threshold           = "0"
+  threshold           = "5"
 
   dimensions {
     AutoScalingGroupName = "${aws_autoscaling_group.build_agents.name}"
