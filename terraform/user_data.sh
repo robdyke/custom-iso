@@ -14,3 +14,10 @@ usermod -a -G docker ubuntu
 
 curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/bin/docker-compose
 chmod +x /usr/bin/docker-compose
+
+cat > /usr/local/bin/bootstrap-iso-builder <<- EOM
+git clone https://github.com/atkinchris/custom-iso.git
+cd custom-iso
+chmod +x ./run.sh
+EOM
+chmod +x /usr/local/bin/bootstrap-iso-builder

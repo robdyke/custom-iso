@@ -4,11 +4,11 @@ data "template_file" "user_data" {
 
 resource "aws_launch_configuration" "build_agent_configuration" {
   image_id      = "ami-785db401"
-  instance_type = "c4.xlarge"
-  spot_price    = "0.07"
+  instance_type = "c4.2xlarge"
+  spot_price    = "0.15"
 
   iam_instance_profile = "${aws_iam_instance_profile.build_agent_profile.arn}"
-  key_name             = "compute-instance-20170930"
+  key_name             = "Macbook (Work)"
   user_data            = "${data.template_file.user_data.rendered}"
 
   security_groups = [
@@ -17,6 +17,10 @@ resource "aws_launch_configuration" "build_agent_configuration" {
 
   lifecycle {
     create_before_destroy = true
+  }
+
+  root_block_device {
+    volume_size = 16
   }
 }
 

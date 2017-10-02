@@ -12,3 +12,6 @@ docker-push:
 
 docker-run:
 	docker run --name builder --privileged atkinchris/custom-iso:latest
+
+push-builds:
+	aws s3 sync ./builds s3://iso-builds
