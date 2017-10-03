@@ -7,3 +7,4 @@ services:
     volumes:
       - ./cache:/var/cache/pacman:delegated
       - ./builds:/tmp/out:delegated
+      - ./work:/var/livecd/work:delegated

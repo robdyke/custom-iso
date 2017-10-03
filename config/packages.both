@@ -1,18 +1,21 @@
 # Display Server
 xorg-server
-xorg-apps
-xorg-xinit
-xorg-twm
-xterm
 
 # Video Drivers
+xf86-input-synaptics
 xf86-video-ati
-xf86-video-nouveau
+xf86-video-fbdev
 xf86-video-intel
+xf86-video-nouveau
+xf86-video-openchrome
+xf86-video-vesa
+xf86-video-vmware
+mesa
+mesa-vdpau
 
 # VirtualBox
-virtualbox-guest-utils
 virtualbox-guest-modules-arch
+virtualbox-guest-utils
 
 # Gnome
 lightdm
@@ -26,3 +29,7 @@ base-devel
 expac
 yajl
 pkg-config
+
+# System Tools
+networkmanager
+ntp
