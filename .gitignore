@@ -1,6 +1,7 @@
-cache
-logs
-builds
+/cache
+/logs
+/builds
+/work
 .terraform
 
 terraform.tfstate.backup
