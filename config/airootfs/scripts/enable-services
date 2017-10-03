@@ -5,8 +5,6 @@ set -e -u
 # Set locales and keyboard
 echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
-# localectl set-locale LANG=en_GB.UTF-8
-# localectl set-x11-keymap gb "" mac
 ln -sf /usr/share/zoneinfo/GB /etc/localtime
 
 # Enable lightdm and graphical login

@@ -10,7 +10,7 @@ RUN pacman -Syu --noconfirm \
     xorriso \
     && pacman -Scc
 
-RUN git clone https://github.com/atkinchris/archiso.git && \
+RUN git clone --depth 1 https://github.com/atkinchris/archiso.git && \
     cd archiso && \
     make install && \
     cd .. && \
@@ -26,4 +26,4 @@ WORKDIR /var/livecd
 VOLUME ["/var/cache/pacman/", "/tmp/out"]
 
 ENTRYPOINT ["time", "./build.sh", "-o", "/tmp/out"]
-# CMD ["-v"]
+CMD ["-v"]

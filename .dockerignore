@@ -1,6 +1,5 @@
-cache
-logs
-builds
-terraform
+# Ignore everything by default
+*
 
-.DS_Store
+# Include only what we need in the Docker context
+!config

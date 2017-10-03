@@ -17,19 +17,26 @@ mesa-vdpau
 virtualbox-guest-modules-arch
 virtualbox-guest-utils
 
-# Gnome
+# Desktop
 lightdm
 lightdm-gtk-greeter
 gnome
 gnome-extra
-plank
+#arc-gtk-theme
+#gnome-shell-extension-dash-to-dock
+#gnome-shell-extension-panel-osd
+#gnome-shell-extension-status-menu-buttons
+#gnome-shell-extension-topicons
 
-# Package Tools
+# System Tools
 base-devel
 expac
 yajl
 pkg-config
-
-# System Tools
-networkmanager
 ntp
+#sudo
+#unrar
+#unzip
+
+# Applications
+#chromium
