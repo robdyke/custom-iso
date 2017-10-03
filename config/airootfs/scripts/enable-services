@@ -2,8 +2,12 @@
 
 set -e -u
 
-# Enable the ntpd time service
-systemctl enable ntpd.service
+# Set locales and keyboard
+mv /etc/locale.gen /etc/locale.gen.orig
+echo "en_GB.UTF-8 UTF-8" > /etc/locale.gen
+locale-gen
+localectl set-locale LANG=en_GB.UTF-8
+localectl set-x11-keymap gb "" mac
 
 # Enable lightdm and graphical login
 systemctl enable lightdm.service
@@ -16,5 +20,13 @@ groupadd -r autologin
 groupadd -r nopasswdlogin
 usermod -a -G autologin,nopasswdlogin root
 
+# Create a non-root user
+useradd -m -G autologin,nopasswdlogin,wheel -s /bin/bash live
+echo live:live | chpasswd
+
 # Enable VirtualBox guest services
 systemctl enable vboxservice.service
+
+# Enable ntp
+timedatectl set-ntp true
+gsettings set org.gnome.desktop.datetime automatic-timezone true

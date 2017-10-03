@@ -20,3 +20,9 @@ lightdm-gtk-greeter
 gnome
 gnome-extra
 plank
+
+# Package Tools
+base-devel
+expac
+yajl
+pkg-config
