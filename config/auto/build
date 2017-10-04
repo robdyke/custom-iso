@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eu
+
+lb build noauto "${@}" 2>&1 | tee /tmp/logs/build.log

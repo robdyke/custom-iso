@@ -1,0 +1,6 @@
+#if PARENT_ARCHIVE_AREAS contrib
+	# virtualbox
+	virtualbox-guest-dkms
+	virtualbox-guest-utils
+	virtualbox-guest-x11
+#endif

@@ -1,29 +1,16 @@
-FROM base/archlinux
+FROM debian:stretch
 
-RUN pacman -Syu --noconfirm \
-    dosfstools \
-    git \
-    lynx \
-    make \
-    squashfs-tools \
-    time \
-    xorriso \
-    && pacman -Scc
-
-RUN git clone --depth 1 https://github.com/atkinchris/archiso.git && \
-    cd archiso && \
-    make install && \
-    cd .. && \
-    rm -rf archiso && \
-    mkdir /var/livecd && \
-    cp -r /usr/share/archiso/configs/releng/* /var/livecd && \
-    chmod +x /var/livecd/build.sh
+RUN apt-get -qy update && apt-get install -qy \
+    live-build \
+    time
 
 COPY config /var/livecd
-
 WORKDIR /var/livecd
 
-VOLUME ["/var/cache/pacman/", "/tmp/out"]
+RUN chmod -R +x auto/ && \
+    chmod -R +x config/hooks && \
+    chmod +x ./build.sh
 
-ENTRYPOINT ["time", "./build.sh", "-o", "/tmp/out"]
-CMD ["-v"]
+VOLUME ["/tmp/builds", "/tmp/logs"]
+
+ENTRYPOINT ["time", "./build.sh"]

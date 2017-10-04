@@ -1,0 +1,16 @@
+#!/bin/bash
+set -eu
+
+lb config noauto \
+  --apt-indices false \
+  --apt-source-archives false \
+  --archive-areas "main contrib non-free" \
+  --backports true \
+  --binary-images iso-hybrid \
+  --debian-installer false \
+  --memtest none \
+  --source false \
+  --system live \
+  --win32-loader false \
+  --zsync false \
+  "$@" 2>&1 | tee /tmp/logs/build.log

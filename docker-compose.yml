@@ -5,5 +5,5 @@ services:
     build: .
     privileged: true
     volumes:
-      - ./cache:/var/cache/pacman:delegated
-      - ./builds:/tmp/out:delegated
+      - ./builds:/tmp/builds
+      - ./logs:/tmp/logs
