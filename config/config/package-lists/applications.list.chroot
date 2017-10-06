@@ -3,6 +3,7 @@ code
 curl
 git
 highlight
+node
 psmisc
 ranger
 rofi
@@ -10,4 +11,5 @@ rtv
 silversearcher-ag
 sudo
 vim
+yarn
 zsh
