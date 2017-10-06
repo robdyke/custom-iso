@@ -5,9 +5,13 @@ gsettings set org.gnome.shell enabled-extensions "${_extensions}"
 # Set theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-# Move dock bar (NOT WORKING)
+# Move and customise dock bar (NOT WORKING)
 # gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+# gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
+# gsettings set org.gnome.shell.extensions.dash-to-dock opaque-background true
+# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.7
 
 # Directories before files
 gsettings set org.gtk.settings.file-chooser sort-directories-first true
@@ -19,5 +23,17 @@ gsettings set org.gnome.desktop.datetime automatic-timezone true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'gb+mac')]"
 
 # Set Dock Favourites
-_favourites="['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
+_favourites="['chromium.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
 gsettings set org.gnome.shell favorite-apps "${_favourites}"
+
+# Set background and lock screen
+_background='file:///usr/share/backgrounds/gnome/Icescape.jpg'
+gsettings set org.gnome.desktop.background picture-options 'zoom'
+gsettings set org.gnome.desktop.background picture-uri "${_background}"
+gsettings set org.gnome.desktop.background primary-color '#ffffff'
+gsettings set org.gnome.desktop.background secondary-color '#000000'
+
+gsettings set org.gnome.desktop.screensaver picture-options 'zoom'
+gsettings set org.gnome.desktop.screensaver picture-uri "${_background}"
+gsettings set org.gnome.desktop.screensaver primary-color '#ffffff'
+gsettings set org.gnome.desktop.screensaver secondary-color '#000000'

@@ -3,11 +3,13 @@ task-print-server
 
 plymouth
 plymouth-x11
+plymouth-themes
 
 gstreamer1.0-vaapi
 i965-va-driver
 
 arc-theme
+papirus-icon-theme
 gnome-shell-extensions
 gnome-shell-extension-dashtodock
 gnome-shell-extension-top-icons-plus

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -eu
+
+if [ -e /usr/sbin/plymouth-set-default-theme ] && [ -e /usr/share/plymouth/themes/fade-in ]
+then
+	plymouth-set-default-theme fade-in
+fi
