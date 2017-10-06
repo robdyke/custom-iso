@@ -1,0 +1,55 @@
+Package: brasero
+Pin: version *
+Pin-Priority: -1
+
+Package: evolution
+Pin: version *
+Pin-Priority: -1
+
+Package: firefox-esr
+Pin: version *
+Pin-Priority: -1
+
+Package: gimp
+Pin: version *
+Pin-Priority: -1
+
+Package: gnome-games
+Pin: version *
+Pin-Priority: -1
+
+Package: gnome-maps
+Pin: version *
+Pin-Priority: -1
+
+Package: gnome-music
+Pin: version *
+Pin-Priority: -1
+
+Package: gnome-weather
+Pin: version *
+Pin-Priority: -1
+
+Package: inkscape
+Pin: version *
+Pin-Priority: -1
+
+Package: libreoffice*
+Pin: version *
+Pin-Priority: -1
+
+Package: polari
+Pin: version *
+Pin-Priority: -1
+
+Package: rhythmbox
+Pin: version *
+Pin-Priority: -1
+
+Package: synaptic
+Pin: version *
+Pin-Priority: -1
+
+Package: transmission-*
+Pin: version *
+Pin-Priority: -1
