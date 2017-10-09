@@ -1,3 +1,7 @@
+default:
+	make build
+	make push-builds
+
 build:
 	./run.sh
 

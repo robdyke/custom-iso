@@ -7,11 +7,11 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-# Move and customise dock bar (NOT WORKING)
-# gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
-# gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
-# gsettings set org.gnome.shell.extensions.dash-to-dock opaque-background true
-# gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.7
+# Move and customise dock bar
+dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
+dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 32
+dconf write /org/gnome/shell/extensions/dash-to-dock/require-pressure-to-show false
+#dconf write /org/gnome/shell/extensions/dash-to-dock/opaque-background true
 
 # Directories before files
 gsettings set org.gtk.settings.file-chooser sort-directories-first true
@@ -37,3 +37,17 @@ gsettings set org.gnome.desktop.screensaver picture-options 'zoom'
 gsettings set org.gnome.desktop.screensaver picture-uri "${_background}"
 gsettings set org.gnome.desktop.screensaver primary-color '#ffffff'
 gsettings set org.gnome.desktop.screensaver secondary-color '#000000'
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Customise gnome-terminal
+_profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+_profile=${_profile:1:-1}
+_profile="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$_profile/"
+gsettings set $_profile custom-command 'zsh'
+gsettings set $_profile use-custom-command true
+#gsettings set $_profile font 'Meslo LG L DZ for Powerline 12'
+
+# Bootstrap dotfiles
+/usr/dotfiles/bootstrap.sh

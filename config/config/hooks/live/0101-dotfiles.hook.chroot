@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -eu
+
+cd /tmp
+git clone https://github.com/atkinchris/dotfiles.git --depth=1
+mv dotfiles /usr/
+chmod +x /usr/dotfiles/bootstrap.sh
