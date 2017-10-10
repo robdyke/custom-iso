@@ -9,8 +9,8 @@ resource "aws_key_pair" "access_key" {
 
 resource "aws_launch_configuration" "build_agent_configuration" {
   image_id      = "ami-785db401"
-  instance_type = "c4.2xlarge"
-  spot_price    = "0.15"
+  instance_type = "c4.4xlarge"
+  spot_price    = "0.3"
 
   iam_instance_profile = "${aws_iam_instance_profile.build_agent_profile.arn}"
   key_name             = "${aws_key_pair.access_key.key_name}"

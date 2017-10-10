@@ -9,12 +9,12 @@ resource "aws_autoscaling_policy" "scale_to_zero" {
 resource "aws_cloudwatch_metric_alarm" "cpu_scale_down" {
   alarm_name          = "builders-cpu"
   comparison_operator = "LessThanOrEqualToThreshold"
-  evaluation_periods  = "5"
+  evaluation_periods  = "10"
   metric_name         = "CPUUtilization"
   namespace           = "AWS/EC2"
   period              = "60"
   statistic           = "Average"
-  threshold           = "5"
+  threshold           = "2"
 
   dimensions {
     AutoScalingGroupName = "${aws_autoscaling_group.build_agents.name}"
