@@ -41,12 +41,12 @@ gsettings set org.gnome.desktop.screensaver secondary-color '#000000'
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Customise gnome-terminal
-_profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
-_profile=${_profile:1:-1}
-_profile="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$_profile/"
-gsettings set $_profile custom-command 'zsh'
-gsettings set $_profile use-custom-command true
+# Customise gnome-terminal (DISABLED - causes Gnome to crash)
+#_profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+#_profile=${_profile:1:-1}
+#_profile="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$_profile/"
+#gsettings set $_profile custom-command 'zsh'
+#gsettings set $_profile use-custom-command true
 #gsettings set $_profile font 'Meslo LG L DZ for Powerline 12'
 
 # Bootstrap dotfiles
