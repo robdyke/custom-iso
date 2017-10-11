@@ -2,7 +2,8 @@ FROM debian:stretch
 
 RUN apt-get -qy update && apt-get install -qy \
     live-build \
-    time
+    time \
+    grub-efi-amd64-bin
 
 COPY config /var/livecd
 WORKDIR /var/livecd

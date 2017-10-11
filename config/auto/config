@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eu
 
+cp -avn /usr/share/live/build/bootloaders/isolinux/* config/bootloaders/isolinux
+
 lb config noauto \
   --apt-indices false \
   --apt-source-archives false \
