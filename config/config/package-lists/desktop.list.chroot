@@ -10,6 +10,6 @@ i965-va-driver
 
 arc-theme
 papirus-icon-theme
-gnome-shell-extensions
-gnome-shell-extension-dashtodock
-gnome-shell-extension-top-icons-plus
+#gnome-shell-extensions
+#gnome-shell-extension-dashtodock
+#gnome-shell-extension-top-icons-plus
