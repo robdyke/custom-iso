@@ -4,7 +4,9 @@ curl
 git
 highlight
 psmisc
+psmisc
 ranger
+rofi
 rofi
 rtv
 silversearcher-ag

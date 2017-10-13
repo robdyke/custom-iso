@@ -4,5 +4,13 @@ set -eu
 
 cd /tmp
 git clone https://github.com/atkinchris/dotfiles.git --depth=1
-mv dotfiles /usr/
-chmod +x /usr/dotfiles/bootstrap.sh
+rsync \
+  --exclude ".git/" \
+  --exclude ".DS_Store" \
+  --exclude "*.sh" \
+  --exclude "README.md" \
+  --exclude "Makefile" \
+  -avh \
+  --no-perms \
+  dotfiles /etc/skel
+rm -rf dotfiles
