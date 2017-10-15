@@ -6,6 +6,8 @@ lb config noauto \
   --apt-source-archives false \
   --archive-areas "main contrib non-free" \
   --backports true \
+  --cache true \
+  --cache-stages false \
   --binary-images iso-hybrid \
   --debian-installer false \
   --memtest none \

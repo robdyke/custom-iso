@@ -3,7 +3,7 @@ set -eu
 
 lb clean noauto "${@}"
 
-rm -f config/binary config/bootstrap config/chroot config/common config/source
-rm -f config/control
+# rm -f config/binary config/bootstrap config/chroot config/common config/source
+# rm -f config/control
 
 rm -f /tmp/logs/build.log

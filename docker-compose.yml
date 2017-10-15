@@ -1,18 +1,9 @@
 version: '2'
 
 services:
-  cache:
-    build: ./squid
-    volumes:
-      - ./cache:/cache
-
   builder:
     build: .
     privileged: true
-    environment:
-      - APT_CACHE=http://cache:8000
     volumes:
       - ./builds:/tmp/builds
-      # - ./logs:/tmp/logs
-    links:
-      - cache
+      - ./cache:/var/livecd/cache

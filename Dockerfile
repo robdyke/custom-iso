@@ -11,6 +11,6 @@ RUN chmod -R +x auto/ && \
     chmod -R +x config/hooks && \
     chmod +x ./build.sh
 
-VOLUME ["/tmp/builds", "/tmp/logs", "/cache"]
+VOLUME ["/tmp/builds", "/tmp/logs", "/tmp/cache"]
 
 ENTRYPOINT ["time", "./build.sh"]
