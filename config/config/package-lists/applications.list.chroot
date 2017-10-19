@@ -2,5 +2,12 @@ chromium
 code
 curl
 git
+highlight
+psmisc
+ranger
+rofi
+rtv
+silversearcher-ag
+sudo
 vim
 zsh
