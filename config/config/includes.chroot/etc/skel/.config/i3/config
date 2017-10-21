@@ -151,6 +151,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/trees.jpg
 
 gaps inner 10
 gaps outer 20
