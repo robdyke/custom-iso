@@ -6,5 +6,4 @@ gstreamer1.0-vaapi
 i965-va-driver
 
 lightdm
-i3
-dmenu
+compton
