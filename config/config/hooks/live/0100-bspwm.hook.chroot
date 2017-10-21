@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eu
+
+
+mkdir -p /etc/skel/.config/bspwm
+mkdir -p /etc/skel/.config/sxhkd
+
+cp /usr/share/doc/bspwm/examples/bspwmrc /etc/skel/.config/bspwm/
+cp /usr/share/doc/bspwm/examples/sxhkdrc /etc/skel/.config/sxhkd/
+
+chmod +x /etc/skel/.config/bspwm/bspwmrc
+chmod +x /etc/skel/.config/sxhkd/sxhkdrc
