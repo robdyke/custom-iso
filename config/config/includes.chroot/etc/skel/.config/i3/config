@@ -4,6 +4,34 @@ set $mod Mod1
 # Set the font
 font pango:Monaco 8
 
+# Colours taken from Xresources
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
+
+# Custom colors for black
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #00000000
+
+#                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
+client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
+client.unfocused        $black      $black      $white      $darkblack  $darkblack
+client.focused_inactive $black      $black      $white      $darkblack  $darkblack
+client.urgent           $darkred    $darkred    $black      $darkred    $darkred
+client.background       $black
+
 # Basic application shortcuts
 bindsym $mod+Return exec urxvt
 bindsym $mod+space exec --no-startup-id rofi -lines 7 -modi run -show run
@@ -95,7 +123,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Startup applications
-exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/trees.jpg
+exec_always --no-startup-id wal -i /usr/share/backgrounds/trees.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id compton
 exec_always --no-startup-id nm-applet &

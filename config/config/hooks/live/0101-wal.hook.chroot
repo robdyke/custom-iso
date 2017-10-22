@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eu
+
+pip3 install pywal
+
+echo "PATH=\"\${PATH}:\${HOME}/.local/bin/\"" >> /etc/skel/.bashrc
+
+# Use colour scheme in new terminals. Might not be needed.
+# echo "(wal -r &)" >> /etc/skel/.bashrc
