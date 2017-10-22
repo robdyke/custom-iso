@@ -7,3 +7,7 @@ i965-va-driver
 
 lightdm
 compton
+dunst
+
+network-manager
+network-manager-gnome

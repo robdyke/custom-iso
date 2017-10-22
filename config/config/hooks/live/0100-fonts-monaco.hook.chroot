@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eu
+
+cd /usr/share/fonts/truetype/
+mkdir ttf-monaco
+cd ttf-monaco
+wget http://www.gringod.com/wp-upload/software/Fonts/Monaco_Linux.ttf
+mkfontdir
+cd ..
+fc-cache
