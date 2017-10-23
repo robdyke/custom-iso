@@ -104,12 +104,6 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -132,7 +126,7 @@ exec_always --no-startup-id nm-applet &
 gaps inner 20
 
 # Set small borders
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 0
 
 # Allow changing back to previous workspace by choosing current workspace again
 workspace_auto_back_and_forth yes
